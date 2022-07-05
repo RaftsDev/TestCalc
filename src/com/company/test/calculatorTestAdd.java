@@ -50,5 +50,15 @@ class calculatorTestAdd {
         assertEquals(-5, calc.add(-3,-2));
     }
 
+    @Test
+    void groupAssertions() {
+        var calc = new Calculator();
+        assertAll("TestsWithZerro",
+                () -> assertEquals(calc.add(0,0), 0),
+                () -> assertEquals(calc.add(0,1), 1),
+                () -> assertEquals(calc.add(1,0), 1)
+        );
+    }
+
 
 }
