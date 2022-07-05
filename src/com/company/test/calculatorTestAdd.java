@@ -1,10 +1,7 @@
 package com.company.test;
 import static org.junit.jupiter.api.Assertions.*;
 import com.company.app.Calculator;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.*;
 
 class calculatorTestAdd {
 
@@ -21,6 +18,16 @@ class calculatorTestAdd {
         count++;
         System.out.println("Test N"+count);
         //var calc = new Calculator();
+    }
+
+    @AfterEach
+    void tearDown() {
+        System.out.println("@AfterEach - executed after each test method.");
+    }
+
+    @AfterAll
+    static void done() {
+        System.out.println("@AfterAll - executed after all test methods.");
     }
 
     @org.junit.jupiter.api.Test
